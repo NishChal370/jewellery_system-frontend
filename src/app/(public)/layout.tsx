@@ -10,7 +10,14 @@ function PublicLayout({ children }: Readonly<{ children: React.ReactNode }>) {
                               sm:pt-0
                         "
                   >
-                        {children}
+                        <span
+                              className="w-[90%] flex flex-col gap-8
+                                    md:w-[60%] md:max-w-[36rem] md:min-w-[20rem]   
+                                    lg:w-[40rem]
+                              "
+                        >
+                              {children}
+                        </span>
                   </main>
             </>
       );

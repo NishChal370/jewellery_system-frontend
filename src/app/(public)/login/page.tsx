@@ -11,12 +11,7 @@ function LoginPage() {
       const { methods, formSubmitHandler, changeForm, presentForm } = useLogin();
 
       return (
-            <span
-                  className="w-[90%] flex flex-col justify-between gap-8
-                        md:w-[60%] md:max-w-[36rem] md:min-w-[20rem]   
-                        lg:w-[40rem]
-                  "
-            >
+            <>
                   <LoginHeader
                         isInEmailForm={presentForm.name === "email"}
                         email={methods.getValues("email")}
@@ -44,7 +39,7 @@ function LoginPage() {
                               </Button>
                         </>
                   )}
-            </span>
+            </>
       );
 }
 

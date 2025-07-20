@@ -28,7 +28,8 @@
                   "@feature/*": ["./src/feature/*"],
                   "@hook/*": ["./src/hook/*"],
                   "@regex": ["./src/regex/regex"],
-                  "@constant/*": ["./src/constants/*"]
+                  "@constant/*": ["./src/constants/*"],
+                  "@routePath/*": ["./src/routePath/*"]
             }
       },
       "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

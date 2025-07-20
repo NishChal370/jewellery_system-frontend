@@ -1,3 +1,4 @@
+import { PUBLIC_PATH } from "@routePath/public-path";
 import Button from "@shared/ui/button";
 
 interface ILoginHeader {
@@ -17,7 +18,7 @@ function LoginHeader({ isInEmailForm, email, changeForm }: ILoginHeader) {
                                     <p>New to NexLuma?</p>
 
                                     <Button type="button" variant="link" size="sm" asChild>
-                                          <a href={"PUBLIC_PATH.signup.full"}> Sign up</a>
+                                          <a href={PUBLIC_PATH.signup.full}> Sign up</a>
                                     </Button>
                               </span>
                         </>
