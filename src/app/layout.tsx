@@ -22,7 +22,9 @@ export default function RootLayout({
       return (
             <html lang="en">
                   <body
-                        className={`${inter.variable} antialiased w-full h-screen flex flex-col justify-between`}
+                        className={`${inter.variable} antialiased w-full h-screen flex flex-col justify-between  
+                              [&>.top--nav]:px-4
+                        `}
                   >
                         {children}
                   </body>

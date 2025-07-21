@@ -7,4 +7,5 @@ export type TIconType =
       | "selectInput"
       | "navIcon"
       | "location"
+      | "notification"
       ;

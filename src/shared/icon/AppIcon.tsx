@@ -1,4 +1,4 @@
-import { CheckIcon, ChevronDownIcon, ChevronsUpDown, MapPin, Menu, SearchIcon, X } from "lucide-react";
+import { Bell, CheckIcon, ChevronDownIcon, ChevronsUpDown, MapPin, Menu, SearchIcon, X } from "lucide-react";
 import { TIconType } from "./model/iconModel";
 
 interface IIcon {
@@ -32,6 +32,9 @@ function AppIcon({ name, className }: IIcon) {
 
                   case "location":
                         return <MapPin size={14} className={className} />;
+
+                  case "notification":
+                        return <Bell size={18} className={className} />;
 
                   default:
                         alert("Please select icon");
