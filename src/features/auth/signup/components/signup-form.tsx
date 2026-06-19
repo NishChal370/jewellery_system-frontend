@@ -7,8 +7,8 @@ import FloatingInput from "@shared/ui/floating-input";
 import FloatingPasswordInput from "@shared/ui/floating-password-input";
 import TermsAndConditionsCheckbox from "@shared/ui/termsAndConditions-checkbox";
 import Form from "@shared/ui/form";
-import useSignupForm from "../hook/use-signup";
-import NEPAL_LOCATIONS from "@constant/inputOptions/nepalLocation";
+import useSignupForm from "../hooks/use-signup";
+import NEPAL_LOCATIONS from "@shared/constants/inputOptions/nepalLocation";
 
 const FloatingCombobox = dynamic(() => import("@shared/ui/floating-combobox"));
 

@@ -20,16 +20,16 @@
             ],
             "paths": {
                   "@app/*": ["./src/app/*"],
-                  "@style/*": ["./src/style/*"],
+                  "@style/*": ["./src/styles/*"],
                   "@navigation/*": ["./src/navigation/*"],
                   "@shared/*": ["./src/shared/*"],
                   "@assets/*": ["./src/assets/*"],
-                  "@lib/*": ["./src/lib/*"],
-                  "@feature/*": ["./src/feature/*"],
-                  "@hook/*": ["./src/hook/*"],
-                  "@regex": ["./src/regex/regex"],
-                  "@constant/*": ["./src/constants/*"],
-                  "@routePath/*": ["./src/routePath/*"]
+                  "@lib/*": ["./src/shared/lib/*"],
+                  "@feature/*": ["./src/features/*"],
+                  "@hook/*": ["./src/shared/hooks/*"],
+                  "@regex": ["./src/shared/regex/regex"],
+                  "@constant/*": ["./src/shared/constants/*"],
+                  "@routePath/*": ["./src/shared/config/routePath/*"]
             }
       },
       "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

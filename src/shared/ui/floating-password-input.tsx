@@ -1,6 +1,6 @@
-import { cn } from "@lib/utils";
+import { cn } from "@shared/lib/utils";
 import Button from "./button";
-import usePasswordToggle from "@hook/input/use-password-toggle";
+import usePasswordToggle from "@shared/hooks/input/use-password-toggle";
 
 type FloatingInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
       label: string;

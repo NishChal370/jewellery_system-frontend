@@ -1,5 +1,5 @@
 
-import useAppForm from "@hook/form/use-app-form";
+import useAppForm from "@shared/hooks/form/use-app-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ISignupForm } from "../model/signup-model";
 import { signupSchema } from "../schema/signup-schema";

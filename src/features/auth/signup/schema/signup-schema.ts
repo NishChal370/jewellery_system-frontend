@@ -1,6 +1,6 @@
 import { z } from "zod";
-import REGEX from "@regex";
-import { INPUT_ERROR_MESSAGE } from "@constant/messages/inputErrorMessage";
+import REGEX from "@shared/regex/regex";
+import { INPUT_ERROR_MESSAGE } from "@shared/constants/messages/inputErrorMessage";
 
 
 export const signupSchema = z.object({

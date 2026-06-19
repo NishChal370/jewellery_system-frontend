@@ -1,4 +1,4 @@
-import { PUBLIC_PATH } from "@routePath/public-path";
+import { PUBLIC_PATH } from "@shared/config/routePath/public-path";
 import Button from "@shared/ui/button";
 
 interface ILoginHeader {

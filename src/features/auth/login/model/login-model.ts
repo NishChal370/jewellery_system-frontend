@@ -1,6 +1,6 @@
 
 import { z } from "zod";
-import { loginSchema } from "@feature/public/login/schema/login-schema";
+import { loginSchema } from "@feature/auth/login/schema/login-schema";
 
 
 export type ILoginForm = z.infer<typeof loginSchema>;

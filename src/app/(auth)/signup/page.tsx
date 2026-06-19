@@ -1,5 +1,6 @@
-import SignupForm from "@feature/public/signup/components/signup-form";
-import { PUBLIC_PATH } from "@routePath/public-path";
+
+import SignupForm from "@feature/auth/signup/components/signup-form";
+import { PUBLIC_PATH } from "@shared/config/routePath/public-path";
 import Button from "@shared/ui/button";
 
 function SignupPage() {

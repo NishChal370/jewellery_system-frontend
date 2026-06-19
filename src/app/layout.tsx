@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "@style/globals.css";
+// @ts-ignore: Allow side-effect CSS import without type declarations
+import "@style/global.css";
+
 
 const inter = Inter({
       variable: "--font-inter",
