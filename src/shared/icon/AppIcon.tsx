@@ -1,5 +1,5 @@
 import { CheckIcon, ChevronDownIcon, ChevronsUpDown, MapPin, Menu, SearchIcon, X } from "lucide-react";
-import { TIconType } from "./model/iconModel";
+import { TIconType } from "./types/app-icon.types";
 
 interface IIcon {
       name: TIconType;

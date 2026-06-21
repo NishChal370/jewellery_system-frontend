@@ -1,7 +1,7 @@
 import { useFormContext } from "react-hook-form";
 import Button from "@shared/ui/button";
 import FloatingPasswordInput from "@shared/ui/floating-password-input";
-import { ILoginPasswordForm } from "../model/login-model";
+import { ILoginPasswordForm } from "../types/login.types";
 
 function LoginPasswordForm() {
       const {

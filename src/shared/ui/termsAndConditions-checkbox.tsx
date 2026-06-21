@@ -1,16 +1,17 @@
 import Button from "@shared/ui/button";
 import Checkbox from "@shared/ui/checkbox";
+import { Link } from "lucide-react";
 
 interface ITermsAndConditionsCheckbox {
-      value: boolean;
-      onClick: () => void;
+      checked: boolean;
+      onCheckedChange: () => void;
       errorMessage?: string;
 }
-function TermsAndConditionsCheckbox({ value, onClick, errorMessage }: ITermsAndConditionsCheckbox) {
+function TermsAndConditionsCheckbox({ checked, onCheckedChange, errorMessage }: ITermsAndConditionsCheckbox) {
       return (
             <div className="w-fit h-fit flex flex-col gap-1.5">
                   <span className="flex items-center space-x-2 cursor-pointer w-full">
-                        <Checkbox id="terms" checked={value} onCheckedChange={onClick} />
+                        <Checkbox id="terms" checked={checked} onCheckedChange={onCheckedChange} />
 
                         <label
                               htmlFor="terms"
@@ -18,9 +19,9 @@ function TermsAndConditionsCheckbox({ value, onClick, errorMessage }: ITermsAndC
                         >
                               I agree to NexLuma&apos;s
                               <Button type="button" variant="link" size="sm" className="px-1 h-0" asChild>
-                                    <a href={""} className=" break-all">
+                                    <Link href={"/"} className=" break-all">
                                           Terms, and Conditions
-                                    </a>
+                                    </Link>
                               </Button>
                               .
                         </label>

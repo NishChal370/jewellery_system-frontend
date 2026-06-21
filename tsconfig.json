@@ -21,7 +21,7 @@
             "paths": {
                   "@app/*": ["./src/app/*"],
                   "@style/*": ["./src/styles/*"],
-                  "@navigation/*": ["./src/navigation/*"],
+                  "@navigation/*": ["./src/shared/ui/navigation/*"],
                   "@shared/*": ["./src/shared/*"],
                   "@assets/*": ["./src/assets/*"],
                   "@lib/*": ["./src/shared/lib/*"],

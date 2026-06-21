@@ -1,4 +1,4 @@
-import PublicTopNav from "@navigation/topNav/public-topNav";
+import PublicTopNav from "@shared/ui/navigation/topNav/public-topNav";
 
 function PublicLayout({ children }: Readonly<{ children: React.ReactNode }>) {
       return (

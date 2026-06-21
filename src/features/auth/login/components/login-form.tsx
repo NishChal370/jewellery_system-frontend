@@ -1,6 +1,5 @@
 "use client";
 
-import React from 'react'
 import LoginHeader from './login-header';
 import Form from '@shared/ui/form';
 import LoginEmailForm from './login-email-form';
@@ -35,7 +34,7 @@ function LoginForm() {
                         <hr />
                     </span>
 
-                    <Button type="submit" size="lg" variant="secondary">
+                    <Button type="button" size="lg" variant="secondary">
                         Sign in with a passkey
                     </Button>
                 </>

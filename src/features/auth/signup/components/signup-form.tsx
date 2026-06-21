@@ -1,16 +1,15 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { Controller } from "react-hook-form";
 import Button from "@shared/ui/button";
 import FloatingInput from "@shared/ui/floating-input";
 import FloatingPasswordInput from "@shared/ui/floating-password-input";
 import TermsAndConditionsCheckbox from "@shared/ui/termsAndConditions-checkbox";
 import Form from "@shared/ui/form";
-import useSignupForm from "../hooks/use-signup";
+import useSignupForm from "../hooks/use-signup-form";
 import NEPAL_LOCATIONS from "@shared/constants/inputOptions/nepalLocation";
+import FloatingCombobox from "@shared/ui/floating-combobox";
 
-const FloatingCombobox = dynamic(() => import("@shared/ui/floating-combobox"));
 
 function SignupForm() {
       const { methods, formSubmitHandler } = useSignupForm();
@@ -24,7 +23,7 @@ function SignupForm() {
       return (
             <Form className="flex flex-col gap-6 pt-2" methods={methods} onSubmit={formSubmitHandler}>
                   <FloatingInput
-                        label="Email or phone number"
+                        label="Email address"
                         id="email"
                         type="text"
                         {...register("email")}
@@ -57,8 +56,8 @@ function SignupForm() {
                         control={control}
                         render={({ field }) => (
                               <TermsAndConditionsCheckbox
-                                    value={field.value}
-                                    onClick={field.onChange}
+                                    checked={field.value}
+                                    onCheckedChange={field.onChange}
                                     errorMessage={errors.agreeTermAndCondition?.message}
                               />
                         )}

@@ -1,13 +1,17 @@
 
 import useAppForm from "@shared/hooks/form/use-app-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ISignupForm } from "../model/signup-model";
+import { ISignupForm } from "../types/signup.types";
 import { signupSchema } from "../schema/signup-schema";
 
 function useSignupForm() {
       const methods = useAppForm<ISignupForm>({
             resolver: zodResolver(signupSchema),
-            defaultValues: { agreeTermAndCondition: false, location: "" },
+            defaultValues: { 
+                  email:"",
+                  password:"",
+                  agreeTermAndCondition: false, 
+                  location: "" },
       });
 
       const formSubmitHandler = methods.handleSubmit((formData) => {

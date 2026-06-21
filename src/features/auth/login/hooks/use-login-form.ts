@@ -1,7 +1,8 @@
-import { FormEvent, useState } from "react";
+import { useState } from "react";
+import type {FormEvent} from "react";
 import useAppForm from "@shared/hooks/form/use-app-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ILoginForm } from "@feature/auth/login/model/login-model";
+import type { ILoginForm } from "@feature/auth/login/types/login.types";
 import { loginSchema } from "@feature/auth/login/schema/login-schema";
 
 function useLoginForm() {
@@ -16,7 +17,7 @@ function useLoginForm() {
       }
 
       const showPasswordStep = async () =>{
-            const isEmailValid = await methods.trigger(["email"]);
+            const isEmailValid = await methods.trigger("email");
 
             if (!isEmailValid) return;
 
@@ -32,7 +33,7 @@ function useLoginForm() {
                   ? (event: FormEvent<HTMLFormElement>) => {
                           event.preventDefault();
 
-                          showPasswordStep();
+                          void showPasswordStep();
                     }
                   : formSubmit;
 
