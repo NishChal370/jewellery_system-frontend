@@ -1,5 +1,9 @@
-import LoginForm from "@feature/auth/login/components/login-form";
+import LoginView from '@feature/auth/login/components/login-view'
 
-export default function LoginPage() {
-      return <LoginForm/>
+function LoginPage() {
+    return (
+        <LoginView/>
+    )
 }
+
+export default LoginPage

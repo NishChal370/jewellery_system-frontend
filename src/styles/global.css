@@ -1,214 +1,208 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@theme {
+    /* Brand */
+    --color-brand: #1b1f3b; /* primary navy for buttons and headings */
+    --color-brand-hover: #34395e; /* hover state for brand buttons */
+    --color-brand-foreground: #ffffff; /* text and icons on brand backgrounds */
 
-@theme inline {
-      --color-background: var(--background);
-      --color-foreground: var(--foreground);
-      --font-lato: var(--font-lato);
-      --color-sidebar-ring: var(--sidebar-ring);
-      --color-sidebar-border: var(--sidebar-border);
-      --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-      --color-sidebar-accent: var(--sidebar-accent);
-      --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-      --color-sidebar-primary: var(--sidebar-primary);
-      --color-sidebar-foreground: var(--sidebar-foreground);
-      --color-sidebar: var(--sidebar);
-      --color-chart-5: var(--chart-5);
-      --color-chart-4: var(--chart-4);
-      --color-chart-3: var(--chart-3);
-      --color-chart-2: var(--chart-2);
-      --color-chart-1: var(--chart-1);
-      --color-ring: var(--ring);
-      --color-input: var(--input);
-      --color-border: var(--border);
-      --color-destructive: var(--destructive);
-      --color-accent-foreground: var(--accent-foreground);
-      --color-accent: var(--accent);
-      --color-muted-foreground: var(--muted-foreground);
-      --color-muted: var(--muted);
-      --color-secondary-foreground: var(--secondary-foreground);
-      --color-secondary: var(--secondary);
-      --color-primary-foreground: var(--primary-foreground);
-      --color-primary: var(--primary);
-      --color-popover-foreground: var(--popover-foreground);
-      --color-popover: var(--popover);
-      --color-card-foreground: var(--card-foreground);
-      --color-card: var(--card);
-      --radius-sm: calc(var(--radius) - 4px);
-      --radius-md: calc(var(--radius) - 2px);
-      --radius-lg: var(--radius);
-      --radius-xl: calc(var(--radius) + 4px);
+    /* Surfaces */
+    --color-background: #ffffff; /* main page background */
+    --color-surface: var(--color-background); /* cards, panels, and form surfaces */
+    --color-input-background: white; /* input and subtle control background */
 
-      --text-hero: var(--font-size-hero);
-      --text-page-title: var(--font-size-page-title);
-      --text-section-title: var(--font-size-section-title);
-      --text-heading: var(--font-size-heading);
-      --text-body: var(--font-size-body);
-      --text-input: var(--font-size-input);
-      --text-button: var(--font-size-button);
-      --text-caption: var(--font-size-caption);
-      --text-sidebar: var(--font-size-sidebar);
+    /* Text */
+    --color-foreground: #161b33; /* primary text */
+    --color-muted-foreground: #8088a3; /* secondary and helper text */
+    --color-label-foreground: var(--color-muted-foreground); /* form labels */
+    --color-placeholder: rgba(128, 136, 163, 0.6); /* input placeholder text */
 
-      --leading-hero: var(--line-height-hero);
-      --leading-page-title: var(--line-height-page-title);
-      --leading-section-title: var(--line-height-section-title);
-      --leading-heading: var(--line-height-heading);
-      --leading-body: var(--line-height-body);
-      --leading-input: var(--line-height-input);
-      --leading-button: var(--line-height-button);
-      --leading-caption: var(--line-height-caption);
-      --leading-sidebar: var(--line-height-sidebar);
+    /* Borders */
+    --color-border: rgba(26, 32, 64, 0.1); /* input borders, dividers */
+    --color-border-hover: var(--color-brand); /* interactive border hover */
+    --color-divider: var(--color-border); /* horizontal divider lines */
 
-      --font-hero: var(--font-weight-hero);
-      --font-page-title: var(--font-weight-page-title);
-      --font-section-title: var(--font-weight-section-title);
-      --font-heading: var(--font-weight-heading);
-      --font-body: var(--font-weight-body);
-      --font-input: var(--font-weight-input);
-      --font-button: var(--font-weight-button);
-      --font-caption: var(--font-weight-caption);
-      --font-sidebar: var(--font-weight-sidebar);
-}
+    /* States */
+    --color-ring: var(--color-brand); /* focus ring */
+    --color-destructive: #dc2626; /* destructive actions */
+    --color-destructive-foreground: var(--color-brand-foreground); /* text on destructive backgrounds */
 
-@layer utilities {
-      .font-hero {
-            font-weight: var(--font-hero);
-      }
-      .font-page-title {
-            font-weight: var(--font-page-title);
-      }
-      .font-section-title {
-            font-weight: var(--font-section-title);
-      }
-      .font-heading {
-            font-weight: var(--font-subheading);
-      }
-      .font-body {
-            font-weight: var(--font-body);
-      }
-      .font-input {
-            font-weight: var(--font-input);
-      }
-      .font-button {
-            font-weight: var(--font-button);
-      }
-      .font-caption {
-            font-weight: var(--font-caption);
-      }
-      .font-sidebar {
-            font-weight: var(--font-sidebar);
-      }
-}
-:root {
-      /* Font Sizes */
-      --font-size-hero: 2.5rem; /* 40px - more balanced for dashboards */
-      --font-size-page-title: 2rem; /* 32px - clear page heading */
-      --font-size-section-title: 1.5rem; /* 24px - section/sub-section */
-      --font-size-heading: 1.25rem; /* 20px - for cards/panels */
-      --font-size-body: 1rem; /* 16px - default text */
-      --font-size-input: 0.9375rem; /* 15px - input fields */
-      --font-size-button: 0.9375rem; /* 15px - button text */
-      --font-size-caption: 0.8125rem; /* 13px - small hints or labels */
-      --font-size-sidebar: 0.875rem; /* 14px - navigation/sidebar */
+    /* Component aliases */
+    --color-primary: var(--color-brand); /* primary component background */
+    --color-primary-foreground: var(--color-brand-foreground); /* primary component text */
 
-      /* Line Heights */
-      --line-height-hero: 1.2; /* Tight for visual impact */
-      --line-height-page-title: 2.5rem; /* 40px */
-      --line-height-section-title: 2rem; /* 32px */
-      --line-height-heading: 1.75rem; /* 28px */
-      --line-height-body: 1.625rem; /* 26px */
-      --line-height-input: 1.5rem; /* 24px */
-      --line-height-button: 1.5rem; /* 24px */
-      --line-height-caption: 1.25rem; /* 20px */
-      --line-height-sidebar: 1.5rem; /* 24px */
+    --color-secondary: var(--color-input-background); /* secondary component background */
+    --color-secondary-foreground: var(--color-foreground); /* secondary component text */
 
-      /* Font Weights */
-      --font-weight-hero: 800; /* Extra bold */
-      --font-weight-page-title: 700; /* Bold */
-      --font-weight-section-title: 600; /* Semibold */
-      --font-weight-heading: 600; /* Semibold */
-      --font-weight-body: 400; /* Regular */
-      --font-weight-input: 400; /* Regular */
-      --font-weight-button: 500; /* Medium/Semibold */
-      --font-weight-caption: 400; /* Light/regular */
-      --font-weight-sidebar: 500; /* Medium */
+    --color-accent: var(--color-input-background); /* subtle hover and active surface */
+    --color-accent-foreground: var(--color-foreground); /* text on accent surfaces */
 
-      --radius: 0.625rem;
-      --background: oklch(1 0 0);
-      --foreground: oklch(0.129 0.042 264.695);
-      --card: oklch(1 0 0);
-      --card-foreground: oklch(0.129 0.042 264.695);
-      --popover: oklch(1 0 0);
-      --popover-foreground: oklch(0.129 0.042 264.695);
-      --primary: oklch(27.578% 0.11291 263.983); /*oklch(0.208 0.042 265.755)*/
-      --primary-foreground: oklch(0.984 0.003 247.858);
-      --secondary: oklch(92% 0.009 255);
-      --secondary-foreground: oklch(27.578% 0.11291 263.983);
-      --muted: oklch(92% 0.009 255);
-      --muted-foreground: oklch(0.554 0.046 257.417);
-      --accent: oklch(92% 0.009 255);
-      --accent-foreground: oklch(27.578% 0.11291 263.983);
-      --destructive: oklch(0.577 0.245 27.325);
-      --border: oklch(0.929 0.013 255.508);
-      --input: oklch(84% 0.013 255.508);
-      --ring: oklch(27.578% 0.11291 263.983); /*oklch(0.704 0.04 256.788); */
-      --chart-1: oklch(0.646 0.222 41.116);
-      --chart-2: oklch(0.6 0.118 184.704);
-      --chart-3: oklch(0.398 0.07 227.392);
-      --chart-4: oklch(0.828 0.189 84.429);
-      --chart-5: oklch(0.769 0.188 70.08);
-      --sidebar: oklch(0.984 0.003 247.858);
-      --sidebar-foreground: oklch(0.129 0.042 264.695);
-      --sidebar-primary: oklch(27.578% 0.11291 263.983);
-      --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-      --sidebar-accent: oklch(92% 0.009 255);
-      --sidebar-accent-foreground: oklch(27.578% 0.11291 263.983);
-      --sidebar-border: oklch(0.929 0.013 255.508);
-      --sidebar-ring: oklch(0.704 0.04 256.788);
-}
+    --color-input: var(--color-border); /* shadcn input border */
 
-.dark {
-      --background: oklch(0.129 0.042 264.695);
-      --foreground: oklch(0.984 0.003 247.858);
-      --card: oklch(27.578% 0.11291 263.983);
-      --card-foreground: oklch(0.984 0.003 247.858);
-      --popover: oklch(27.578% 0.11291 263.983);
-      --popover-foreground: oklch(0.984 0.003 247.858);
-      --primary: oklch(0.929 0.013 255.508);
-      --primary-foreground: oklch(27.578% 0.11291 263.983);
-      --secondary: oklch(0.279 0.041 260.031);
-      --secondary-foreground: oklch(0.984 0.003 247.858);
-      --muted: oklch(0.279 0.041 260.031);
-      --muted-foreground: oklch(0.704 0.04 256.788);
-      --accent: oklch(0.279 0.041 260.031);
-      --accent-foreground: oklch(0.984 0.003 247.858);
-      --destructive: oklch(0.704 0.191 22.216);
-      --border: oklch(1 0 0 / 10%);
-      --input: oklch(1 0 0 / 15%);
-      --ring: oklch(0.551 0.027 264.364);
-      --chart-1: oklch(0.488 0.243 264.376);
-      --chart-2: oklch(0.696 0.17 162.48);
-      --chart-3: oklch(0.769 0.188 70.08);
-      --chart-4: oklch(0.627 0.265 303.9);
-      --chart-5: oklch(0.645 0.246 16.439);
-      --sidebar: oklch(27.578% 0.11291 263.983);
-      --sidebar-foreground: oklch(0.984 0.003 247.858);
-      --sidebar-primary: oklch(0.488 0.243 264.376);
-      --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-      --sidebar-accent: oklch(0.279 0.041 260.031);
-      --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-      --sidebar-border: oklch(1 0 0 / 10%);
-      --sidebar-ring: oklch(0.551 0.027 264.364);
+    /* Font family */
+    --font-sans:
+        var(--font-inter),
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif; /* application font stack */
+
+    /* Page typography */
+    --text-page-header: 1.55rem; /* main page heading */
+    --text-page-header--line-height: 1.2;
+
+    --text-page-subheader: 0.88rem; /* supporting page copy */
+    --text-page-subheader--line-height: 1.4;
+
+    /* Section typography */
+    --text-section-header: 1.55rem; /* section heading */
+    --text-section-header--line-height: 1.2;
+
+    --text-section-subheader: 0.88rem; /* section supporting copy */
+    --text-section-subheader--line-height: 1.4;
+
+    /* Form typography */
+    --text-label: 0.78rem; /* form labels */
+    --text-label--line-height: 1.4;
+
+    --text-input: 0.95rem; /* input text */
+    --text-input--line-height: 1.5;
+
+    /* Button typography */
+    --text-button: 0.95rem; /* primary button text */
+    --text-button--line-height: 1.2;
+
+    --text-button-sm: 0.88rem; /* secondary button text */
+    --text-button-sm--line-height: 1.2;
+
+    --text-control: 0.95rem; /* generic control text */
+    --text-control--line-height: 1.2;
+
+    /* Body typography */
+    --text-body: 0.88rem; /* general body copy */
+    --text-body--line-height: 1.5;
+
+    --text-body-sm: 0.82rem; /* helper text and compact copy */
+    --text-body-sm--line-height: 1.4;
+
+    --text-caption: 0.78rem; /* captions and divider labels */
+    --text-caption--line-height: 1.4;
+
+    --text-quote: 0.875rem; /* testimonial text */
+    --text-quote--line-height: 1.6;
+
+    --text-quote-cite: 0.8125rem; /* testimonial citation */
+    --text-quote-cite--line-height: 1.4;
+
+    --text-nav-logo: 1rem; /* logo text reference */
+    --text-nav-logo--line-height: 1.2;
+
+    /* Letter spacing */
+    --tracking-header: -0.02em; /* page heading spacing */
+    --tracking-subheader: -0.02em; /* section heading spacing */
+    --tracking-button: 0.02em; /* button label spacing */
+    --tracking-normal: 0; /* default spacing */
+
+    /* Font weights */
+    --font-weight-body: 400; /* normal body text */
+    --font-weight-medium: 500; /* labels and secondary buttons */
+    --font-weight-semibold: 600; /* primary buttons */
+    --font-weight-header: 700; /* headings */
+
+    /* Radius */
+    --radius-input: 10px; /* inputs and buttons */
+    --radius-card: 10px; /* cards and modals */
+    --radius-full: 9999px; /* pills and avatars */
+
+    /* Shadows */
+    --shadow-focus: 0 0 0 3px rgba(27, 31, 59, 0.12); /* input focus ring */
+    --shadow-card: 0 4px 24px rgba(27, 31, 59, 0.35); /* primary button shadow */
+    --shadow-button-hover: 0 8px 32px rgba(27, 31, 59, 0.5); /* primary button hover shadow */
+    --shadow-modal:
+        0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1); /* modal shadow */
+
+    /* Breakpoints */
+    --breakpoint-sm: 640px; /* small screens */
+    --breakpoint-md: 768px; /* medium screens */
+    --breakpoint-auth: 900px; /* authentication layout switch */
+    --breakpoint-lg: 1024px; /* large screens */
+    --breakpoint-xl: 1280px; /* extra-large screens */
+    --breakpoint-2xl: 1536px; /* very large screens */
+
+    /* Motion */
+    --ease-default: cubic-bezier(0.4, 0, 0.2, 1); /* default easing */
+    --duration-fast: 150ms; /* quick interactions */
+    --duration-base: 200ms; /* standard interactions */
 }
 
 @layer base {
-      * {
-            @apply border-border outline-ring/50;
-      }
-      body {
-            font-family: var(--font-inter), sans-serif;
-            @apply bg-background text-foreground text-body leading-body;
-      }
+    *,
+    *::before,
+    *::after {
+        border-color: var(--color-border);
+    }
+
+    html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        margin: 0;
+        background-color: var(--color-background);
+        color: var(--color-foreground);
+        font-family: var(--font-sans);
+        font-weight: var(--font-weight-body);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    input,
+    select,
+    textarea {
+        font:
+        var(--font-weight-body)
+        var(--text-input) / var(--text-input--line-height)
+        var(--font-sans);
+    }
+
+    button {
+        font:
+        var(--font-weight-medium)
+        var(--text-button) / var(--text-button--line-height)
+        var(--font-sans);
+    }
+
+    button:not(:disabled) {
+        cursor: pointer;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: var(--color-placeholder);
+    }
+
+    img,
+    video {
+        display: block;
+        max-width: 100%;
+    }
+
+    ::selection {
+        background-color: var(--color-brand);
+        color: var(--color-brand-foreground);
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-ring);
+        outline-offset: 2px;
+    }
 }

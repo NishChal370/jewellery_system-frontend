@@ -1,0 +1,190 @@
+
+:root {
+    --navy-950: #0F1228;
+    --navy-900: #1B1F3B;
+    --navy-800: #242A4E;
+    --navy-700: #323A68;
+    --glow: #8C97FF;
+    --glow-soft: #B9C0FF;
+    --dawn: #FFCB8E;
+    --paper: #FCFCFD;
+    --ink: #1B1F3B;
+    --ink-soft: #6E7090;
+    --line: #E7E6F0;
+    --focus-ring: rgba(140, 151, 255, 0.35);
+}
+  
+.scene {
+    position: relative;
+    flex: 1.15;
+    min-width: 0;
+    overflow: hidden;
+    background: radial-gradient(120% 100% at 20% 15%, var(--navy-800) 0%, var(--navy-900) 45%, var(--navy-950) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 56px;
+}
+
+.scene-noise {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 22px 22px;
+    pointer-events: none;
+}
+
+.glow {
+    position: absolute;
+    top: 28%;
+    left: 58%;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--glow) 0%, rgba(140,151,255,0.0) 70%);
+    opacity: 0.28;
+    filter: blur(10px);
+    animation: pulse-glow 7s ease-in-out infinite;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.22; transform: translate(-50%, -50%) scale(0.92); }
+    50% { opacity: 0.4; transform: translate(-50%, -50%) scale(1.08); }
+}
+
+.particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: var(--s, 3px);
+    height: var(--s, 3px);
+    border-radius: 50%;
+    background: var(--glow-soft);
+    opacity: 0;
+    animation: rise var(--dur, 9s) linear infinite;
+    animation-delay: var(--delay, 0s);
+    box-shadow: 0 0 6px 1px rgba(185, 192, 255, 0.6);
+}
+
+@keyframes rise {
+    0%   { transform: translateY(20px) translateX(0); opacity: 0; }
+    10%  { opacity: 0.85; }
+    85%  { opacity: 0.5; }
+    100% { transform: translateY(-340px) translateX(18px); opacity: 0; }
+}
+
+.flight {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    height: 220px;
+    margin: 0 auto 40px;
+}
+
+.flight-path {
+    position: absolute;
+    inset: 0;
+    overflow: visible;
+}
+
+.trail {
+    fill: none;
+    stroke: var(--glow-soft);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    opacity: 0.55;
+    stroke-dasharray: 6 14;
+    animation: draw-trail 5s linear infinite;
+}
+.trail.t2 { opacity: 0.32; stroke-width: 1; animation-duration: 6.5s; animation-delay: -1.5s; }
+.trail.t3 { opacity: 0.2; stroke-width: 1; animation-duration: 8s; animation-delay: -3s; }
+
+@keyframes draw-trail {
+    to { stroke-dashoffset: -120; }
+}
+
+.bird {
+    position: absolute;
+    left: 6%;
+    top: 38%;
+    width: 78px;
+    animation: glide 6s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(140,151,255,0.45));
+}
+
+@keyframes glide {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    25%  { transform: translate(95px, -22px) rotate(-3deg); }
+    50%  { transform: translate(220px, 4px) rotate(2deg); }
+    75%  { transform: translate(310px, -14px) rotate(-2deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.wing { animation: flap 1.8s ease-in-out infinite; transform-origin: 50% 50%; }
+@keyframes flap {
+    0%, 100% { transform: scaleY(1); }
+    50%      { transform: scaleY(0.82); }
+}
+
+.scene-copy {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.scene-copy h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+    color: #FFFFFF;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+}
+
+  .scene-copy p {
+    font-size: 14.5px;
+    color: #ABAFD6;
+    margin: 0;
+    max-width: 340px;
+    margin-inline: auto;
+    line-height: 1.6;
+  }
+
+
+   @media (max-width: 900px) {
+
+     .scene {
+        flex: none;
+    min-height: 165px;
+    padding: 14px 18px;
+  }
+
+  .flight {
+    height: 65px;
+    margin-bottom: 4px;
+     transform: translateY(-60px);
+  }
+
+
+.bird {
+    width: 65px;
+    top: 140%;
+}
+
+  .scene-copy h2 {
+    font-size: 17px;
+  }
+
+  .scene-copy p {
+    font-size: 11.5px;
+  }
+
+  .panel {
+    padding: 20px 18px 20px;
+  }
+  }
