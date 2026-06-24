@@ -31,8 +31,6 @@ const inputVariants = cva(
                 default: [
                     "border-border",
                     "focus:border-brand",
-                    "focus:bg-brand/[0.04]",
-                    "focus:shadow-focus",
                 ],
 
                 error: [

@@ -39,6 +39,14 @@ function AppIcon({ name, className }: IIcon) {
                                     <rect x="3" y="11" width="18" height="11" rx="2" />
                                     <path d="M7 11V7a5 5 0 0110 0v4" />
                               </svg>;
+                              
+                  case "passkey":
+                        return <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <rect x="1" y="1" width="6" height="6" rx="1" fill="#1b1f3b" opacity="0.85"/>
+                                    <rect x="9" y="1" width="6" height="6" rx="1" fill="#1b1f3b" opacity="0.55"/>
+                                    <rect x="1" y="9" width="6" height="6" rx="1" fill="#1b1f3b" opacity="0.55"/>
+                                    <rect x="9" y="9" width="6" height="6" rx="1" fill="#1b1f3b" opacity="0.85"/>
+                              </svg>;
                   default:
                         alert("Please select icon");
                         break;

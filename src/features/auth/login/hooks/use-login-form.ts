@@ -10,34 +10,13 @@ function useLoginForm() {
             resolver: zodResolver(loginSchema),
       });
 
-      const [loginFormStep, setLoginFormStep] = useState<"email" | "password">("email");
 
-      const showEmailStep = ()=>{
-            setLoginFormStep("email");
-      }
-
-      const showPasswordStep = async () =>{
-            const isEmailValid = await methods.trigger("email");
-
-            if (!isEmailValid) return;
-
-            setLoginFormStep("password");
-      }
-
-      const formSubmit = methods.handleSubmit((formDetail) => {
+      const formSubmitHandler = methods.handleSubmit((formDetail) => {
+            console.log("object")
             console.log(formDetail);
       });
 
-      const formSubmitHandler =
-            loginFormStep === "email"
-                  ? (event: FormEvent<HTMLFormElement>) => {
-                          event.preventDefault();
-
-                          void showPasswordStep();
-                    }
-                  : formSubmit;
-
-      return { methods, loginFormStep, showEmailStep, formSubmitHandler } as const;
+      return { methods,formSubmitHandler } as const;
 }
 
 export default useLoginForm;
